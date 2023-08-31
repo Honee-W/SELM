@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>SELM: Speech Enhancement Using Coarse-Grained Discrete Tokens and Language Models</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -43,6 +43,46 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+
+  <style>
+    .image-container {
+      display: flex; /* Use flexbox for horizontal alignment */
+      justify-content: center; /* Center items horizontally */
+    }
+  
+    .image-container img {
+      max-width: 30%; /* Adjust the width as needed */
+      height: auto;
+      margin-right: 15px; /* Add margin to create spacing between images */
+    }
+
+    .image-container img:last-child {
+      margin-right: 0; /* Remove margin from the last image */
+    }
+
+    .audio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    }
+
+    .audio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    }
+
+    .audio-item p {
+        margin-top: 10px;
+    }
+
+  </style>
+
+
 </head>
 <body>
 
@@ -163,34 +203,21 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
+       <div class="has-text-centered">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
+        <img src="static/images/selm.jpg" alt="MY ALT TEXT" />
+        <h2 class="subtitle">
+          The architecture of SELM.
         </h2>
       </div>
-      <div class="item">
+      <div class="has-text-centered">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
+        <img src="static/images/llm.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle">
+          The details of the modeling stage.
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+
   </div>
 </div>
 </div>
@@ -201,47 +228,170 @@
 
 
 <!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
+      <h2 class="title is-3">Speech Denoising with SELM</h2>
+
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="column is-four-fifths">          
+          <div class="image-container">
+            <img src="static/images/test_2_clean.png" alt="clean">
+            <img src="static/images/test_2_mix.png" alt="mix">
+            <img src="static/images/test_2_enhance.png" alt="enhanced">
           </div>
+          <div class="audio-container">
+            <div class="audio-item">
+              <audio controls>
+                  <source src="static/audio/test_2_clean.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>        
+              <p>clean_1.wav</p>
+            </div>
+            <div class="audio-item">   
+              <audio controls>
+                  <source src="static/audio/test_2_mix.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>mix_1.wav</p>
+            </div>
+            <div class="audio-item">      
+              <audio controls>
+                  <source src="static/audio/test_2_4096.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>enhanced_1.wav</p>
+            </div>
+          </div>          
         </div>
       </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">          
+          <div class="image-container">
+            <img src="static/images/test_8_clean.png" alt="clean">
+            <img src="static/images/test_8_mix.png" alt="mix">
+            <img src="static/images/test_8_enhance.png" alt="enhanced">
+          </div>
+          <div class="audio-container">
+            <div class="audio-item">
+              <audio controls>
+                  <source src="static/audio/test_8_clean.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>        
+              <p>clean_2.wav</p>
+            </div>
+            <div class="audio-item">   
+              <audio controls>
+                  <source src="static/audio/test_8_mix.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>mix_2.wav</p>
+            </div>
+            <div class="audio-item">      
+              <audio controls>
+                  <source src="static/audio/test_8_4096.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>enhanced_2.wav</p>
+            </div>
+          </div>          
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">          
+          <div class="image-container">
+            <img src="static/images/test_10_clean.png" alt="clean">
+            <img src="static/images/test_10_mix.png" alt="mix">
+            <img src="static/images/test_10_enhance.png" alt="enhanced">
+          </div>
+          <div class="audio-container">
+            <div class="audio-item">
+              <audio controls>
+                  <source src="static/audio/test_10_clean.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>        
+              <p>clean_3.wav</p>
+            </div>
+            <div class="audio-item">   
+              <audio controls>
+                  <source src="static/audio/test_10_mix.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>mix_3.wav</p>
+            </div>
+            <div class="audio-item">      
+              <audio controls>
+                  <source src="static/audio/test_10_4096.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>enhanced_3.wav</p>
+            </div>
+          </div>          
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">          
+          <div class="image-container">
+            <img src="static/images/test_22_clean.png" alt="clean">
+            <img src="static/images/test_22_mix.png" alt="mix">
+            <img src="static/images/test_22_enhance.png" alt="enhanced">
+          </div>
+          <div class="audio-container">
+            <div class="audio-item">
+              <audio controls>
+                  <source src="static/audio/test_22_clean.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>        
+              <p>clean_3.wav</p>
+            </div>
+            <div class="audio-item">   
+              <audio controls>
+                  <source src="static/audio/test_22_mix.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>mix_3.wav</p>
+            </div>
+            <div class="audio-item">      
+              <audio controls>
+                  <source src="static/audio/test_22_4096.wav" type="audio/wav">
+                  Your browser does not support the audio element.
+              </audio>
+              <p>enhanced_3.wav</p>
+            </div>
+          </div>          
+        </div>
+      </div>
+
+
     </div>
   </div>
-</section> -->
+</section>
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -249,16 +399,14 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
 
 
-
-
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -268,8 +416,18 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
+
+
+<section class="hero is-small is-light">
+  <div class="container is-max-desktop content">
+    <div class="container">
+      <h2 class="title">More tasks waiting to be integrated...</h2>
+      </div>
+    </div>
+  </section>
+
 
 
 <!--BibTex citation -->
