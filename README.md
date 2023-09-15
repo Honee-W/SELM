@@ -1,5 +1,5 @@
 # SELM Demo page
-This is a demo page for the paper "SELM: Speech Enhancement Using Coarse-Grained Discrete Tokens and Language Models".
+This is a demo page for the paper "SELM: Speech Enhancement Using Discrete Tokens and Language Models".
 
 
 ## Website License
